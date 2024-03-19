@@ -1,0 +1,14 @@
+topic: ~variabili()
+language: iti
+
+# Defining extra concepts out of words or group of words
+#concept:(hello) [hello hi hey "good morning" greetings]
+
+# Catching inputs and triggering outputs
+#u:(e:onStart) $onStopped=1
+
+# Replying to speech
+u: (il mio nome è _*) $name=$1
+u: (il mio cognome è _*) $surname=$1
+u: (voglio fissare l'appuntamento per [0-30]{2}/[0-12]{2}) $date=$1
+u: (per le ) $hour=$1
