@@ -1,7 +1,6 @@
 # Robotica24
-# Robotica23
 <p align="center">
-  <img width="250" height="250" src="https://github.com/R32team/Robotica24/blob/main/social/logo/logo_R32.pdf">
+  <img width="250" height="250" src="https://github.com/R32team/Robotica24/blob/main/social/logo/logo_R32.png.jpg">
 </p>
 
 ## About us:
