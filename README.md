@@ -16,7 +16,7 @@ Nel nostro progetto il Nao è in grado di fissare appuntamenti per i clienti, di
 
 ### CODING
 
-La cartella [CODING](https://github.com/R32team/Robotica23/tree/main/coding) presenta tutti i file che riguardano la parte Coding dell'intero progetto.
+La cartella [CODING](https://github.com/R32team/Robotica24/tree/main/coding) presenta tutti i file che riguardano la parte Coding dell'intero progetto.
 Contiene:
 - Il [progetto per il nao](https://github.com/R32team/Robotica24/tree/main/coding/base_info_calend), contiene gli host per tutti i server nao.
 - I codici necessari per il funzionamento del [server_calendario](https://github.com/R32team/Robotica24/tree/main/coding/server_calendario).
@@ -26,4 +26,6 @@ Contiene:
 
 
 ### SOCIAL
-in arrivo....
+La cartella [SOCIAL](https://github.com/R32team/Robotica24/tree/main/social) contiene:
+- il logo
+- il [sito principale](https://r32.altervista.org/2024)
