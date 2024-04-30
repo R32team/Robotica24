@@ -1,4 +1,4 @@
-topic: ~variabili()
+topic: ~domanda()
 language: iti
 
 # Defining extra concepts out of words or group of words
@@ -8,7 +8,6 @@ language: iti
 #u:(e:onStart) $onStopped=1
 
 # Replying to speech
-u: (il mio nome è _*) $name=$1
-u: (il mio cognome è _*) $surname=$1
-u: (voglio fissare l'appuntamento per [0-30]{2}/[0-12]{2}) $date=$1
-u: (per le ) $hour=$1
+#u:(~hello) ~hello
+u: (*) $question=$1
+$onStopped=1
