@@ -40,10 +40,10 @@ def authenticate_google_calendar():
 @app.route('/create_event', methods=['POST'])
 def create_event():
     data = request.json
-    nome = data['name']
-    cognome = data['surname']
-    date = data['date']
-    ora = data['time']
+    nome = ""
+    cognome = ""
+    date = "9/05/24"
+    ora = "15:00"
 
     service = authenticate_google_calendar()
     full_date = "{}/2024".format(date)
@@ -61,4 +61,4 @@ def create_event():
     return jsonify({"message": "Evento creato con successo", "eventLink": created_event.get('htmlLink')})
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000)
+    app.run(host='0.0.0.0', port=5001)

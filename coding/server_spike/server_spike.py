@@ -1,5 +1,5 @@
 import socket
-import spike
+from spike import PrimeHub, Motor
 class LegoCartServer:
     def __init__(self, host='0.0.0.0', port=5008):
         self.host = host
@@ -31,8 +31,9 @@ class LegoCartServer:
                             connection.sendall(response.encode('utf-8'))
 
     def start_lego_cart(self):
-        # Qui dovresti inserire la logica per avviare il tuo Lego cart.
-        # Potrebbe essere una chiamata a un sistema esterno, un'API, o qualsiasi cosa controlli il tuo Lego cart.
+        
+#qua devi mettere il codice per la lego cart dopo aver importat quello che devi importare
+
         print("Avviando il Lego cart...")
 
 if __name__ == '__main__':
