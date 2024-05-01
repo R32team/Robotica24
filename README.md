@@ -53,13 +53,17 @@ Contiene:
 
 ## Social
 La cartella [SOCIAL](https://github.com/R32team/Robotica24/tree/main/social) contiene:
-- ### [il logo]("https://github.com/R32team/Robotica24/blob/main/social/logo/logo_R32.png.jpg")
+- ### il logo
+  - [LOGO]("https://github.com/R32team/Robotica24/blob/main/social/logo/logo_R32.png.jpg")
 - ### Website
-- il [sito principale](https://r32.altervista.org/2024)
+  - il [sito principale](https://r32.altervista.org/2024)
 
 ## Authors
 
 ### Social
-
+[YouTube](https://youtube.com/@TeamR32?si=As8qYzGKS3mq9FxK)
+[Instagram](https://www.instagram.com/__.r32.__?igsh=dzBnbGl0YTFjaTVh)
+[Tiktok](https://www.tiktok.com/@r32_team?_t=8khPqKhltCa&_r=1)
+[mail](socialteam.r32@gmail.com)
 ### License
 [GNU](https://github.com/R32team/Robotica24/blob/main/LICENSE)
