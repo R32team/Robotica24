@@ -49,7 +49,7 @@ Contiene:
 - Il flowchart che abbiamo seguito per ideare i nostri server, è il collegamento utente-Nao-server[sequence_diagram](https://github.com/R32team/Robotica24/tree/main/coding/sequence_diagram.svg):
 <div align="center">
     <img width="500" height="400" src = "https://github.com/R32team/Robotica24/tree/main/coding/sequence_diagram.svg">
-
+</div>
 
 ## Social
 La cartella [SOCIAL](https://github.com/R32team/Robotica24/tree/main/social) contiene:
