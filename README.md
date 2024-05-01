@@ -1,4 +1,4 @@
-#R32team
+# R32team
 <p align="center">
   <img width="250" height="250" src="https://github.com/R32team/Robotica24/blob/main/social/logo/logo_R32.png.jpg">
 </p>
@@ -59,11 +59,11 @@ La cartella [SOCIAL](https://github.com/R32team/Robotica24/tree/main/social) con
   - il [sito principale](https://r32.altervista.org/2024)
 
 ## Authors
-
+suggest us new ideas at:
+- socialteam.r32@gmail.com (R32team)
 ### Social
 - [YouTube](https://youtube.com/@TeamR32?si=As8qYzGKS3mq9FxK)
 - [Instagram](https://www.instagram.com/__.r32.__?igsh=dzBnbGl0YTFjaTVh)
 - [Tiktok](https://www.tiktok.com/@r32_team?_t=8khPqKhltCa&_r=1)
-- [mail](socialteam.r32@gmail.com)
 ### License
 [GNU](https://github.com/R32team/Robotica24/blob/main/LICENSE)
