@@ -48,7 +48,7 @@ Contiene:
 - I codici necessari per il funzionamento del [server_Document_car](https://github.com/R32team/Robotica24/tree/main/coding/server_spike).
 - Il flowchart che abbiamo seguito per ideare i nostri server, e il collegamento utente-Nao-server è il[sequence_diagram](https://github.com/R32team/Robotica24/tree/main/coding/sequence_diagrams/sequence_diagram.svg):
 <div align="center">
-    <img width="500" height="400" src = "https://github.com/R32team/Robotica24/tree/main/coding/sequence_diagrams/sequence_diagram.png">
+    <img src = "https://github.com/R32team/Robotica24/tree/main/coding/sequence_diagrams/sequence_diagram.png"  width="500" height="400"/>
 </div>
 
 ## Social
@@ -61,9 +61,9 @@ La cartella [SOCIAL](https://github.com/R32team/Robotica24/tree/main/social) con
 ## Authors
 
 ### Social
-[YouTube](https://youtube.com/@TeamR32?si=As8qYzGKS3mq9FxK)
-[Instagram](https://www.instagram.com/__.r32.__?igsh=dzBnbGl0YTFjaTVh)
-[Tiktok](https://www.tiktok.com/@r32_team?_t=8khPqKhltCa&_r=1)
-[mail](socialteam.r32@gmail.com)
+- [YouTube](https://youtube.com/@TeamR32?si=As8qYzGKS3mq9FxK)
+- [Instagram](https://www.instagram.com/__.r32.__?igsh=dzBnbGl0YTFjaTVh)
+- [Tiktok](https://www.tiktok.com/@r32_team?_t=8khPqKhltCa&_r=1)
+- [mail](socialteam.r32@gmail.com)
 ### License
 [GNU](https://github.com/R32team/Robotica24/blob/main/LICENSE)
