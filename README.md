@@ -46,9 +46,9 @@ Contiene:
 - I codici necessari per il funzionamento del [server_calendario](https://github.com/R32team/Robotica24/tree/main/coding/server_calendario).
 - I codici necessari per il funzionamento del [server_infromativo](https://github.com/R32team/Robotica24/tree/main/coding/server_info).
 - I codici necessari per il funzionamento del [server_Document_car](https://github.com/R32team/Robotica24/tree/main/coding/server_spike).
-- Il flowchart che abbiamo seguito per ideare i nostri server, è il collegamento utente-Nao-server[sequence_diagram](https://github.com/R32team/Robotica24/tree/main/coding/sequence_diagram.svg):
+- Il flowchart che abbiamo seguito per ideare i nostri server, e il collegamento utente-Nao-server è il[sequence_diagram](https://github.com/R32team/Robotica24/tree/main/coding/sequence_diagrams/sequence_diagram.svg):
 <div align="center">
-    <img width="500" height="400" src = "https://github.com/R32team/Robotica24/tree/main/coding/sequence_diagram.svg">
+    <img width="500" height="400" src = "https://github.com/R32team/Robotica24/tree/main/coding/sequence_diagrams/sequence_diagram.png">
 </div>
 
 ## Social
