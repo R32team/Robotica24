@@ -48,7 +48,7 @@ Contiene:
 - I codici necessari per il funzionamento del [server_Document_car](https://github.com/R32team/Robotica24/tree/main/coding/server_spike).
 - Il flowchart che abbiamo seguito per ideare i nostri server, e il collegamento utente-Nao-server è il[sequence_diagram](https://github.com/R32team/Robotica24/tree/main/coding/sequence_diagrams/sequence_diagram.svg):
 <div align="center">
-    <img src = "https://github.com/R32team/Robotica24/tree/main/coding/sequence_diagrams/sequence_diagram.png">
+    <img src = "https://github.com/R32team/Robotica24/tree/main/coding/sequence_diagrams/sequence_diagram.png" height= "1211" width = "890">
 </div>
 
 ## Social
