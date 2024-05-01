@@ -6,9 +6,9 @@
 ## Contents:
 * [About us](#about-us)
 *	[Project](#project)
-		* [Coding](#coding)
-		* [Social](#social)
-      * [Website](#website)
+      * [Coding](#coding)
+      * [Social](#social)
+        * [Website](#website)
 * [Authors](#authors)
 * [Social](#social-1)
 
