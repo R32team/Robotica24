@@ -54,7 +54,7 @@ Contiene:
 ## Social
 La cartella [SOCIAL](https://github.com/R32team/Robotica24/tree/main/social) contiene:
 - ### il logo
-  - [Logo]("https://github.com/R32team/Robotica24/blob/main/social/logo/logo_R32.png.jpg")
+  - [Logo](https://github.com/R32team/Robotica24/blob/main/social/logo/logo_R32.png.jpg)
 - ### Website
   - il [sito principale](https://r32.altervista.org/2024)
 
