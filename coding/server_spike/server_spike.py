@@ -1,5 +1,4 @@
 import socket
-from spike import PrimeHub, Motor
 class LegoCartServer:
     def __init__(self, host='0.0.0.0', port=5008):
         self.host = host
@@ -11,30 +10,63 @@ class LegoCartServer:
             sock.bind((self.host, self.port))
             sock.listen()
             print(f"Server in ascolto su {self.host}:{self.port}")
-
-            while True:
-                connection, client_address = sock.accept()
-                with connection:
-                    print(f"Connesso a {client_address}")
-                    while True:
-                        data = connection.recv(1024)
-                        if not data:
-                            break
-
-                        command = data.decode('utf-8')
-                        if command == 'start lego cart':
-                            self.start_lego_cart()
-                            response = "Lego cart avviato!"
-                            connection.sendall(response.encode('utf-8'))
-                        else:
-                            response = "Comando non riconosciuto."
-                            connection.sendall(response.encode('utf-8'))
+            self.start_lego_cart()
 
     def start_lego_cart(self):
-        
-#qua devi mettere il codice per la lego cart dopo aver importat quello che devi importare
+        from hub import port
+        '''import motor_pair
+        import color_sensor
+        import distance_sensor
+        import color'''
+        import asyncio
+        import time
 
-        print("Avviando il Lego cart...")
+
+        #--oggetti
+        print("Definisco oggetti")
+        motor_pair.pair(motor_pair.PAIR_1, port.C, port.D)
+
+        #--funzioni
+        print("Definisco funzione")
+        async def line_follow_to_object():
+            Kp = 1.5
+            print("Inizio movimento motori")
+            motor_pair.move(motor_pair.PAIR_1, 70)
+            termina_programma = False
+            while not termina_programma:
+                if color_sensor.color(port.A) is color.YELLOW:
+                    Kp = -1.5
+                if color_sensor.color(port.A) is color.GREEN:
+                    Kp = 1.5
+                distance = distance_sensor.distance(port.B)
+                #print("Distance =", distance/10, "cm")
+                #print("Oggetto raggiunto?")
+                if distance == -1:
+                    distance = 2000
+                if distance < 200:
+                    motor_pair.stop(motor_pair.PAIR_1)
+                    time.sleep(2)
+                    continue
+                #print("Distance =", distance)
+                if color_sensor.color(port.A) is color.AZURE:
+                    termina_programma = True
+                    print("Azzurro rilevato")
+                    break
+                else:
+                    reflectedlight = color_sensor.reflection(port.A)
+                    error = 50 - reflectedlight
+                    control_output = int(Kp * error)
+                    #print("Control output = ", control_output)
+                    motor_pair.move(motor_pair.PAIR_1, control_output)
+            motor_pair.stop(motor_pair.PAIR_1)
+        print("Funzione definita")
+
+        #--execute
+        print("Inizio esecuzione")
+
+        asyncio.run(line_follow_to_object())
+
+        print("Fine esecuzione")
 
 if __name__ == '__main__':
     server = LegoCartServer(host='0.0.0.0', port=5008)
