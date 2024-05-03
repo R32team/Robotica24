@@ -1,7 +1,6 @@
 import socket
 import spacy
 from transformers import pipeline
-import qi
 
 # Carica il modello SpaCy italiano
 nlp_spacy = spacy.load("it_core_news_sm")
@@ -21,22 +20,13 @@ def answer_question(question, context):
     return qa_result['answer']
 
 def server_program():
-    host = '0.0.0.0'
-    port = 12345
+    host = '192.168.1.12'
+    port = 5001
 
     server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     server_socket.bind((host, port))
     server_socket.listen(5)
     print("Server in ascolto su {}:{}".format(host, port))
-
-    # Connetti al robot NAO
-    session = qi.Session()
-    try:
-        session.connect("tcp://" + nao_ip + ":" + str(port))
-        print("Connesso al robot NAO.")
-    except RuntimeError:
-        print("Impossibile connettersi al robot NAO.")
-        exit(1)
 
     while True:
         conn, address = server_socket.accept()
@@ -56,16 +46,9 @@ La scuola si impegna a offrire un'educazione che sviluppa non solo la conoscenza
         # Trova la risposta
         answer = answer_question(question, context_text)
 
-        # Fai dire al NAO la risposta
-        tts = session.service("ALTextToSpeech")
-        tts.say(answer)
-
         # Invia la risposta al client
         conn.sendall(answer.encode('utf-8'))
         conn.close()
-
-    # Chiudi la sessione
-    session.close()
 
 # Avvia il server
 server_program()

@@ -1,4 +1,4 @@
-import socket
+'''import socket
 
 
 class LegoCartServer:
@@ -23,4 +23,4 @@ class LegoCartServer:
 
 if __name__ == '__main__':
     server = LegoCartServer(host='0.0.0.0', port=5008)
-    server.start_server()
+    server.start_server()'''

@@ -5,14 +5,16 @@ def install_libraries():
         "Flask",
         "google-api-python-client",
         "google-auth-oauthlib",
-        "transformers"
+        "transformers",
+        "torch torchvision torchaudio"
+        "tf-keras"
     ]
     
     for library in libraries:
-        subprocess.call(['pip3', 'install', library])
+        subprocess.call(['pip', 'install', library])
 
-    subprocess.call("pip3 install -U pip setuptools wheel", shell=True)
-    subprocess.call("pip3 install -U spacy", shell=True)
+    subprocess.call("pip install -U pip setuptools wheel", shell=True)
+    subprocess.call("pip install -U spacy", shell=True)
     subprocess.call("python -m spacy download it_core_news_sm", shell=True)
 
 if __name__ == "__main__":
