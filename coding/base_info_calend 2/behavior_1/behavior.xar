@@ -35,7 +35,7 @@
                   <![CDATA[import requests
 
 # Define the server's address and port
-server_address = '127.0.0.1'
+server_address = '0.0.0.0'
 server_port = 5001
 
 # Define the URL for the server endpoint
@@ -82,8 +82,8 @@ class NaoClient:
         self.question = ""  #qua mettete la domanda
 
     def send_question_get_answer(self):
-        server_address = '192.168.1.12'  # indrizzo ip
-        server_port = 5001  # Inserisci la porta su cui il server è in ascolto
+        server_address = '0.0.0.0'  # indrizzo ip
+        server_port = 5008  # Inserisci la porta su cui il server è in ascolto
 
         # Crea una connessione socket TCP/IP
         with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as sock:
@@ -105,7 +105,7 @@ class NaoClient:
 nao_client = NaoClient()
 
 # Impostare la domanda
-question = "Qual è la capitale dell'Italia?"
+question = "cos'è la scuola stimate verona"
 nao_client.set_question(question)
 
 # Invia la domanda e riceve la risposta dal server

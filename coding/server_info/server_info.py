@@ -20,7 +20,7 @@ def answer_question(question, context):
     return qa_result['answer']
 
 def server_program():
-    host = '192.168.1.12'
+    host = '0.0.0.0'
     port = 5008
 
     server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
