@@ -21,7 +21,7 @@ def answer_question(question, context):
 
 def server_program():
     host = '192.168.1.12'
-    port = 5001
+    port = 5008
 
     server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     server_socket.bind((host, port))

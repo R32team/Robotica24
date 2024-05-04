@@ -164,4 +164,13 @@
             <translation type="unfinished">Vai document_car, è il tuo momento</translation>
         </message>
     </context>
+    <context>
+        <name>behavior_1/behavior.xar:/Say (1)</name>
+        <message>
+            <location filename="behavior_1/behavior.xar" line="0"/>
+            <source>appuntamento fissato con sucesso</source>
+            <comment>Text</comment>
+            <translation type="unfinished">appuntamento fissato con sucesso</translation>
+        </message>
+    </context>
 </TS>

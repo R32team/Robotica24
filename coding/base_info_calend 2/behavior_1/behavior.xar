@@ -28,58 +28,27 @@
               <Input name="onStop" type="1" type_size="1" nature="3" inner="0" tooltip="Box behavior stops when a signal is received on this input." id="3" />
               <Output name="onStopped" type="1" type_size="1" nature="1" inner="0" tooltip="Signal sent when box behavior is finished." id="4" />
             </Box>
-            <Box name="client_cal" id="9" localization="8" tooltip="" x="788" y="532">
+            <Box name="client_cal" id="9" localization="8" tooltip="" x="705" y="522">
               <bitmap>media/images/box/box-python-script.png</bitmap>
               <script language="4">
                 <content>
-                  <![CDATA[# Define the server's address and port
+                  <![CDATA[import requests
+
+# Define the server's address and port
 server_address = '127.0.0.1'
 server_port = 5001
 
-#dati
-def process_appointment_info(received_data):
-    # Supponiamo che received_data sia un dizionario contenente le variabili ricevute
-    name = received_data.get("name")
-    surname = received_data.get("surname")
-    date = received_data.get("date")  # assumiamo sia nel formato "gg/mm"
-    hour = received_data.get("hour")  # un numero da 1 a 24
+# Define the URL for the server endpoint
+url = f'http://{server_address}:{server_port}/create_event'
 
-    # Aggiungi l'anno alla data e formatta l'ora
-    full_date = "{}/2024".format(date)
-    if int(hour) < 17:
-        hour = "0" + hour  # Aggiunge uno zero davanti per le ore da 1 a 9
-    appointment_time = "{}:00".format(hour)
-# Define the request data
-data = {
-        name,
-        surname,
-        date,
-        hour
-}
+# Invia la richiesta POST al server Flask
+response = requests.post(url)
 
-# Create a TCP socket
-sock = __import__('socket').socket(__import__('socket').AF_INET, __import__('socket').SOCK_STREAM)
-
-try:
-    # Connect to the server
-    sock.connect((server_address, server_port))
-
-    # Send the request
-    sock.sendall(data.encode())
-
-    # Receive the response
-    response = b''
-    while True:
-        part = sock.recv(4096)
-        if not part:
-            break
-        response += part
-
-    print(response.decode())
-
-finally:
-    # Close the socket
-    sock.close()]]>
+# Visualizza la risposta dal server
+if response.status_code == 200:
+    print("Risposta dal server:", response.text)
+else:
+    print("Errore durante l'invio della richiesta al server:", response.status_code)]]>
                 </content>
               </script>
               <Input name="onLoad" type="1" type_size="1" nature="0" inner="1" tooltip="Signal sent when diagram is loaded." id="1" />
@@ -88,7 +57,7 @@ finally:
               <Input name="frase" type="3" type_size="1" nature="1" inner="0" tooltip="" id="4" />
               <Output name="onStopped" type="1" type_size="1" nature="1" inner="0" tooltip="Signal sent when box behavior is finished." id="5" />
             </Box>
-            <Box name="domanda" id="12" localization="8" tooltip="" x="584" y="389">
+            <Box name="domanda" id="12" localization="8" tooltip="" x="546" y="378">
               <dialogFile>../domanda/domanda.dlg</dialogFile>
               <bitmap>media/images/box/box-dialog.png</bitmap>
               <script language="4">
@@ -102,7 +71,7 @@ finally:
               <Output name="onStopped" type="1" type_size="1" nature="1" inner="0" tooltip="Signal sent when box behavior is finished." id="4" />
               <Output name="output" type="3" type_size="1" nature="2" inner="0" tooltip="" id="5" />
             </Box>
-            <Box name="client_info" id="14" localization="8" tooltip="" x="742" y="378">
+            <Box name="client_info" id="14" localization="8" tooltip="" x="705" y="366">
               <bitmap>media/images/box/box-python-script.png</bitmap>
               <script language="4">
                 <content>
@@ -154,7 +123,7 @@ tts.say(answer)]]>
               <Output name="onStopped" type="1" type_size="1" nature="1" inner="0" tooltip="Signal sent when box behavior is finished." id="5" />
               <Output name="output" type="3" type_size="1" nature="2" inner="0" tooltip="" id="6" />
             </Box>
-            <Box name="Animated Say Text" id="13" localization="8" tooltip="Say the text received on its input and move during its speech.&#x0A;" x="906" y="380">
+            <Box name="Animated Say Text" id="13" localization="8" tooltip="Say the text received on its input and move during its speech.&#x0A;" x="848" y="366">
               <bitmap>media/images/box/interaction/say.png</bitmap>
               <script language="4">
                 <content>
@@ -2295,11 +2264,11 @@ class MyClass(GeneratedClass):
               <Input name="onStop" type="1" type_size="1" nature="3" inner="0" tooltip="Box behavior stops when a signal is received on this Input." id="3" />
               <Output name="onStopped" type="1" type_size="1" nature="1" inner="0" tooltip="Signal sent when Box behavior is finished." id="4" />
               <Parameter name="Voice shaping (%)" inherits_from_parent="1" content_type="1" value="100" default_value="100" min="50" max="150" tooltip='Used to modify at runtime the voice feature (tone, speed). In a slighty&#x0A;different way than pitch and speed, it gives a kind of &quot;gender or age&#x0A;modification&quot; effect.&#x0A;&#x0A;For instance, a quite good male derivation of female voice can be&#x0A;obtained setting this parameter to 78%.&#x0A;&#x0A;Note: For a better effect, you can compensate this parameter with the&#x0A;speed parameter. For example, if you want to decrease by 20% the voice&#x0A;shaping, you will have to increase by 20% the speed to keep a constant&#x0A;average speed.' id="5" />
-              <Parameter name="Speed (%)" inherits_from_parent="1" content_type="1" value="100" default_value="100" min="50" max="200" tooltip="Changes the speed of the voice.&#x0A;&#x0A;Note: For a better effect, you can compensate this parameter with the voice&#x0A;shaping parameter. For example, if you want to increase by 20% the speed, you&#x0A;will have to decrease by 20% the voice shaping to keep a constant average&#x0A;speed." id="6" />
+              <Parameter name="Speed (%)" inherits_from_parent="1" content_type="1" value="120" default_value="100" min="50" max="200" tooltip="Changes the speed of the voice.&#x0A;&#x0A;Note: For a better effect, you can compensate this parameter with the voice&#x0A;shaping parameter. For example, if you want to increase by 20% the speed, you&#x0A;will have to decrease by 20% the voice shaping to keep a constant average&#x0A;speed." id="6" />
               <Parameter name="Text" inherits_from_parent="0" content_type="5" value="Vai document_car, è il tuo momento" default_value="" tooltip="The text you want to say. Don&apos;t forget to translate it!" id="7" />
               <Resource name="Speech" type="Lock" timeout="0" />
             </Box>
-            <Box name="Say Text" id="6" localization="8" tooltip="Say the text received on its input." x="361" y="34">
+            <Box name="Say (1)" id="7" localization="8" tooltip="Say some text. The text can be localized." x="818" y="522">
               <bitmap>media/images/box/interaction/say.png</bitmap>
               <script language="4">
                 <content>
@@ -2324,12 +2293,12 @@ class MyClass(GeneratedClass):
         while( self.bIsRunning ):
             time.sleep( 0.2 )
 
-    def onInput_onStart(self, p):
+    def onInput_onStart(self):
         self.bIsRunning = True
         try:
             sentence = "\RSPD="+ str( self.getParameter("Speed (%)") ) + "\ "
             sentence += "\VCT="+ str( self.getParameter("Voice shaping (%)") ) + "\ "
-            sentence += str(p)
+            sentence += self.getParameter("Text")
             sentence +=  "\RST\ "
             id = self.tts.pCall("say",str(sentence))
             self.ids.append(id)
@@ -2348,11 +2317,12 @@ class MyClass(GeneratedClass):
                 </content>
               </script>
               <Input name="onLoad" type="1" type_size="1" nature="0" inner="1" tooltip="Signal sent when Diagram is loaded." id="1" />
-              <Input name="onStart" type="3" type_size="1" nature="2" inner="0" tooltip="Box behavior starts when a signal is received on this Input." id="2" />
+              <Input name="onStart" type="1" type_size="1" nature="2" inner="0" tooltip="Box behavior starts when a signal is received on this Input." id="2" />
               <Input name="onStop" type="1" type_size="1" nature="3" inner="0" tooltip="Box behavior stops when a signal is received on this Input." id="3" />
               <Output name="onStopped" type="1" type_size="1" nature="1" inner="0" tooltip="Signal sent when Box behavior is finished." id="4" />
               <Parameter name="Voice shaping (%)" inherits_from_parent="1" content_type="1" value="100" default_value="100" min="50" max="150" tooltip='Used to modify at runtime the voice feature (tone, speed). In a slighty&#x0A;different way than pitch and speed, it gives a kind of &quot;gender or age&#x0A;modification&quot; effect.&#x0A;&#x0A;For instance, a quite good male derivation of female voice can be&#x0A;obtained setting this parameter to 78%.&#x0A;&#x0A;Note: For a better effect, you can compensate this parameter with the&#x0A;speed parameter. For example, if you want to decrease by 20% the voice&#x0A;shaping, you will have to increase by 20% the speed to keep a constant&#x0A;average speed.' id="5" />
-              <Parameter name="Speed (%)" inherits_from_parent="1" content_type="1" value="100" default_value="100" min="50" max="200" tooltip="Changes the speed of the voice.&#x0A;&#x0A;Note: For a better effect, you can compensate this parameter with the voice&#x0A;shaping parameter. For example, if you want to increase by 20% the speed, you&#x0A;will have to decrease by 20% the voice shaping to keep a constant average&#x0A;speed." id="6" />
+              <Parameter name="Speed (%)" inherits_from_parent="1" content_type="1" value="120" default_value="100" min="50" max="200" tooltip="Changes the speed of the voice.&#x0A;&#x0A;Note: For a better effect, you can compensate this parameter with the voice&#x0A;shaping parameter. For example, if you want to increase by 20% the speed, you&#x0A;will have to decrease by 20% the voice shaping to keep a constant average&#x0A;speed." id="6" />
+              <Parameter name="Text" inherits_from_parent="0" content_type="5" value="appuntamento fissato con sucesso" default_value="" tooltip="The text you want to say. Don&apos;t forget to translate it!" id="7" />
               <Resource name="Speech" type="Lock" timeout="0" />
             </Box>
             <Link inputowner="14" indexofinput="4" outputowner="12" indexofoutput="5" />
@@ -2361,7 +2331,6 @@ class MyClass(GeneratedClass):
             <Link inputowner="9" indexofinput="2" outputowner="2" indexofoutput="4" />
             <Link inputowner="2" indexofinput="2" outputowner="1" indexofoutput="5" />
             <Link inputowner="0" indexofinput="4" outputowner="13" indexofoutput="4" />
-            <Link inputowner="0" indexofinput="4" outputowner="9" indexofoutput="5" />
             <Link inputowner="12" indexofinput="2" outputowner="1" indexofoutput="6" />
             <Link inputowner="3" indexofinput="2" outputowner="1" indexofoutput="7" />
             <Link inputowner="5" indexofinput="2" outputowner="3" indexofoutput="4" />
@@ -2369,6 +2338,8 @@ class MyClass(GeneratedClass):
             <Link inputowner="0" indexofinput="4" outputowner="4" indexofoutput="4" />
             <Link inputowner="4" indexofinput="2" outputowner="4" indexofoutput="5" />
             <Link inputowner="0" indexofinput="4" outputowner="4" indexofoutput="5" />
+            <Link inputowner="7" indexofinput="2" outputowner="9" indexofoutput="5" />
+            <Link inputowner="0" indexofinput="4" outputowner="7" indexofoutput="4" />
           </Diagram>
         </BehaviorKeyframe>
       </BehaviorLayer>
