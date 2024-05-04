@@ -6,7 +6,7 @@ def install_libraries():
         "google-api-python-client",
         "google-auth-oauthlib",
         "transformers",
-        "torch torchvision torchaudio"
+        "torch torchvision torchaudio",
         "tf-keras"
     ]
     
