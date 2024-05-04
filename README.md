@@ -42,6 +42,7 @@ La cartella [CODING](https://github.com/R32team/Robotica24/tree/main/coding) pre
 > - googleapclient <br>
 > - spacy <br>
 > - transformers <br>
+>
 La cartella [CODING](https://github.com/R32team/Robotica24/tree/main/coding) contiene:
 - Il [progetto per il nao](https://github.com/R32team/Robotica24/tree/main/coding/base_info_calend), contiene gli host per tutti i server nao.
 - I codici necessari per il funzionamento del [server_calendario](https://github.com/R32team/Robotica24/tree/main/coding/server_calendario).
