@@ -1,63 +1,72 @@
 from flask import Flask, request, jsonify
 import datetime
+import os
+
+from google.oauth2.credentials import Credentials
 from googleapiclient.discovery import build
 from google_auth_oauthlib.flow import InstalledAppFlow
 from google.auth.transport.requests import Request
-import pickle
-import os
 
 app = Flask(__name__)
 
 SCOPES = ['https://www.googleapis.com/auth/calendar']
-credentials = None
 
 def authenticate_google_calendar():
-    global credentials
-    credentials_json = {
-        "installed": {
-            "client_id": "357674996162-pfi2hb7mu2h60se96ip0m1apg601sv02.apps.googleusercontent.com",
-            "project_id": "calendario-nao",
-            "auth_uri": "https://accounts.google.com/o/oauth2/auth",
-            "token_uri": "https://oauth2.googleapis.com/token",
-            "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
-            "client_secret": "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",
-            "redirect_uris": ["urn:ietf:wg:oauth:2.0:oob", "http://localhost"]
-        }
-    }
+    creds = None
 
-    if os.path.exists('token.pickle'):
-        with open('token.pickle', 'rb') as token:
-            credentials = pickle.load(token)
+    if os.path.exists("token.json"):
+        creds = Credentials.from_authorized_user_file("token.json", SCOPES)
+    
+    # If there are no (valid) credentials available, let the user log in.
+    if not creds or not creds.valid:
+        if creds and creds.expired and creds.refresh_token:
+            creds.refresh(Request())
+        else:
+            flow = InstalledAppFlow.from_client_secrets_file("credentials.json", SCOPES)
+            creds = flow.run_local_server(port=0)
+        # Save the credentials for the next run
+        with open("token.json", "w") as token:
+            token.write(creds.to_json())
 
-    if not credentials or not credentials.valid:
-        flow = InstalledAppFlow.from_client_config(credentials_json, SCOPES)
-        credentials = flow.run_local_server(port=0)
-        with open('token.pickle', 'wb') as token:
-            pickle.dump(credentials, token)
+    return build("calendar", "v3", credentials=creds)
 
-    return build('calendar', 'v3', credentials=credentials)
 
 @app.route('/create_event', methods=['POST'])
 def create_event():
-    nome = "Mario"
-    cognome = "Tomazzolo"
-    date = "9/05/24"
-    ora = "15:00"
-
     service = authenticate_google_calendar()
-    full_date = "{}/2024".format(date)
-    start_time = datetime.datetime.strptime(full_date + ' ' + ora, '%d/%m/%Y %H:%M')
-    end_time = start_time + datetime.timedelta(hours=1)
+
+    nome        = "Mario"
+    cognome     = "Tomazzolo"
+    luogo       = "Segreteria"
+    descrizione = "Consegna pagelle"
+    giorno      = "9"
+    mese        = "5"
+    anno        = "2024"
+    ora         = "15"
+    minuti      = "00"
+    durata      = 1
+
+    full_date   = "{}/{}/{}".format(giorno, mese, anno)
+    full_time   = "{}:{}".format(ora, minuti)
+
+    start_time  = datetime.datetime.strptime(full_date + "T" + full_time, "%d/%m/%YT%H:%M") + datetime.timedelta(hours=1)
+    end_time    = start_time + datetime.timedelta(hours=durata)
 
     event = {
         'summary': 'Appuntamento di {} {}'.format(nome, cognome),
-        'start': {'dateTime': start_time.isoformat(), 'timeZone': 'Europe/Rome'},
-        'end': {'dateTime': end_time.isoformat(), 'timeZone': 'Europe/Rome'},
+        'location': luogo,
+        'description': descrizione,
+        'start': {
+            'dateTime': start_time.isoformat(),
+            'timeZone': 'Europe/Rome',
+        },
+        'end': {
+            'dateTime': end_time.isoformat(),
+            'timeZone': 'Europe/Rome',
+        }
     }
-
     created_event = service.events().insert(calendarId='primary', body=event).execute()
-
-    event_link = created_event.get('htmlLink')
+    event_link    = created_event.get('htmlLink')
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5001)

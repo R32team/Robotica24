@@ -7,13 +7,13 @@
     <Dialogs>
         <Dialog name="ExampleDialog" src="behavior_1/ExampleDialog/ExampleDialog.dlg" />
         <Dialog name="variabili" src="variabili/variabili.dlg" />
-        <Dialog name="domanda" src="domanda/domanda.dlg" />
+        <Dialog name="dialogo" src="dialogo/dialogo.dlg" />
     </Dialogs>
     <Resources />
     <Topics>
         <Topic name="ExampleDialog_enu" src="behavior_1/ExampleDialog/ExampleDialog_enu.top" topicName="ExampleDialog" language="en_US" nuance="enu" />
         <Topic name="variabili_iti" src="variabili/variabili_iti.top" topicName="variabili" language="it_IT" nuance="iti" />
-        <Topic name="domanda_iti" src="domanda/domanda_iti.top" topicName="domanda" language="it_IT" nuance="iti" />
+        <Topic name="dialogo_iti" src="dialogo/dialogo_iti.top" topicName="dialogo" language="it_IT" nuance="iti" />
     </Topics>
     <IgnoredPaths />
     <Translations auto-fill="it_IT">

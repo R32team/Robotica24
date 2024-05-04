@@ -1,4 +1,4 @@
-topic: ~domanda()
+topic: ~dialogo()
 language: iti
 
 # Defining extra concepts out of words or group of words
@@ -9,5 +9,4 @@ language: iti
 
 # Replying to speech
 #u:(~hello) ~hello
-u: (*) $question=$1
-$onStopped=1
+u:(_*) $risposta=$1

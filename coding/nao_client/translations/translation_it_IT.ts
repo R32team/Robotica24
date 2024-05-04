@@ -2,6 +2,14 @@
 <!DOCTYPE TS>
 <TS version="2.1" language="it_IT">
     <context>
+        <name>behavior_1/behavior.xar:/Animated Say</name>
+        <message>
+            <source>Ciao</source>
+            <comment>Text</comment>
+            <translation type="vanished">Ciao</translation>
+        </message>
+    </context>
+    <context>
         <name>behavior_1/behavior.xar:/Choice</name>
         <message>
             <source>no/no NAO/non proprio/non credo</source>
@@ -158,10 +166,15 @@
             <translation type="vanished">Ciao</translation>
         </message>
         <message>
-            <location filename="behavior_1/behavior.xar" line="0"/>
             <source>Vai document_car, è il tuo momento</source>
             <comment>Text</comment>
-            <translation type="unfinished">Vai document_car, è il tuo momento</translation>
+            <translation type="obsolete">Vai document_car, è il tuo momento</translation>
+        </message>
+        <message>
+            <location filename="behavior_1/behavior.xar" line="0"/>
+            <source>Vai document car, è il tuo momento</source>
+            <comment>Text</comment>
+            <translation type="unfinished">Vai document car, è il tuo momento</translation>
         </message>
     </context>
     <context>

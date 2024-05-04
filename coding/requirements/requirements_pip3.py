@@ -18,6 +18,6 @@ def install_libraries():
     subprocess.call("cd spaCy", shell=True)
     subprocess.call("pip3 install -r requirements.txt", shell=True)
     subprocess.call("pip3 install --no-build-isolation --editable .", shell=True)
-    subprocess.call("python -m spacy download en_core_web_sm", shell=True)
+    subprocess.call("python3 -m spacy download it_core_news_sm", shell=True)
 if __name__ == "__main__":
     install_libraries()

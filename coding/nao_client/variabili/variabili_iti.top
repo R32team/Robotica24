@@ -8,8 +8,7 @@ language: iti
 #u:(e:onStart) $onStopped=1
 
 # Replying to speech
-u: (il mio nome è _*) $name=$1
-u: (il mio cognome è _*) $surname=$1
-u: (voglio fissare l'appuntamento per [0-30]{2}/[0-12]{2}) $date=$1
-u: (per le ) $hour=$1
-$onStopped=1
+u:(il mio nome è _*) Ciao $1
+u:(il mio cognome è *) In quale giorno posso fissarti l'appungamento? 
+u:(voglio {fissare l'appuntamento} per _*) Va bene il giorno $1 .
+u:(per le {ore} _*) Va bene alle ore $1 . $onStopped=1
