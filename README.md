@@ -22,7 +22,7 @@ R32 è un gruppo di robotica, composto da giovani studenti entusiasti provenient
 Il progetto ideato da R32 è intitolato AssistantNao. È stato scelto di risolvere il problema riguardo alcuni ostacoli nell’ambito lavorativo. La funzione del NAO infatti è proprio quella di svolgere il compito di un segretario.
 
 Abbiamo scelto di usare il nao per il nostro progetto, perchè  è un robot umanoide, ed è stato il primo robot creato da Aldebaran, azienda leader nella robotica umanoide. Famoso in tutto il mondo, è uno strumento di programmazione diventato ormai un riferimento nell'istruzione e nella ricerca.
-NAO viene anche utilizzato come assistente presso aziende e centri sanitari per accogliere, informare e intrattenere i visitatori. NAO è stato programmato tramite Choreographe, software di programmazione a blocchi. 
+NAO viene anche utilizzato come assistente presso aziende e centri sanitari per raccogliere, informare e intrattenere i visitatori. NAO è stato programmato tramite Choreographe, software di programmazione a blocchi. 
 Nel nostro progetto il Nao è in grado di fissare appuntamenti per i clienti, di dare informazioni riguardo al nostro progetto, e grazie al suo assitente la Document_car, creata grazie a spike lego, che è in grado di muoversi sui comandi del nao, il Nao può anche consegnare dei documenti da un'aula nell'altra.
 
 
